@@ -1,0 +1,16 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: service-stock
+  cloud:
+    nacos:
+      discovery:
+        # 配置服务地址
+        server-addr: 192.168.149.130:8848
+        # 配置用户名,默认是nacos;高版本nacos必须配置该项
+        username: nacos
+        # 配置密码
+        password: nacos
+        # 命名空间,默认是public
+        namespace: public

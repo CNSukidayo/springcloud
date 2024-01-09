@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service-order
+  cloud:
+    nacos:
+      discovery:
+        # 配置服务地址
+        server-addr: 192.168.149.130:8848
+        # 配置用户名,默认是nacos;高版本nacos必须配置该项
+        username: nacos
+        # 配置密码
+        password: nacos
+        # 命名空间,默认是public
+        namespace: public
+        # ephemeral: false 永久实例,默认是true临时实例,哪怕宕机了也不会删除实例
+        # service: 服务名称,默认为${spring.application.name}
+        # group: 分组,默认是DEFAULT_GROUP
+        # weight: 权重,默认是1;通常需要结合负载均衡的策略
+        # access-key: 上阿里云时需要使用的云账号
+        # secret-key: 上阿里云时需要使用的云账号密码
+        # metadata: 元数据,K-V键值对
+        # cluster-name: 集群名称,见之后的教程
+
