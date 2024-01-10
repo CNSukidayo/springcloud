@@ -7,7 +7,7 @@ spring:
     nacos:
       discovery:
         # 配置服务地址
-        server-addr: 192.168.149.130:8848
+        server-addr: 192.168.149.130:9001
         # 配置用户名,默认是nacos;高版本nacos必须配置该项
         username: nacos
         # 配置密码
@@ -22,4 +22,16 @@ spring:
         # secret-key: 上阿里云时需要使用的云账号密码
         # metadata: 元数据,K-V键值对
         # cluster-name: 集群名称,见之后的教程
-
+    # loadbalancer:
+      # retry:
+        # enabled: true
+#service-stock:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+ribbon:
+  eager-load:
+    # 开启ribbon立即加载
+    enabled: true
+    # 还可以再这里配置哪些服务是需要立即加载的;这里配置mall-order服务的负载均衡器是立即加载
+    # 多个配置用逗号,隔开;如果不配置则所有服务都是立即加载
+    # clients: mall-order
