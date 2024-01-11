@@ -6,7 +6,21 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.149.130:8870
+        server-addr: 192.168.230.225:8848
         username: nacos
         password: nacos
         namespace: public
+logging:
+  level:
+    io.github.cnsukidayo.cloud.order.feign: debug
+feign:
+  client:
+    config:
+      service-stock:
+        logger-level: full
+        # 连接超时时间
+        connect-timeout: 5000
+        # 处理超时时间
+        read-timeout: 3000
+        request-interceptors:
+          - io.github.cnsukidayo.cloud.order.config.FeignAuthRequestInterceptor

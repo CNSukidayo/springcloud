@@ -7,7 +7,7 @@ spring:
     nacos:
       discovery:
         # 配置服务地址
-        server-addr: 192.168.149.130:8870
+        server-addr: 192.168.230.225:8848
         # 配置用户名,默认是nacos;高版本nacos必须配置该项
         username: nacos
         # 配置密码
