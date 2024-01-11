@@ -1,0 +1,14 @@
+spring:
+  application:
+    # name必须设置为配置中心对应的Data Id的值
+    name: live-common
+  cloud:
+    nacos:
+      # 配置nacos服务器地址
+      server-addr: 192.168.230.225:8848
+      # 必须配置账户和密码
+      username: nacos
+      password: nacos
+      config:
+        # 设置分组
+        namespace: 978d31de-fefb-44f2-a682-3a9fd8c369d1

@@ -2,6 +2,7 @@ package io.github.cnsukidayo.cloud.stock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author guyuanjie
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class StockApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StockApplication.class, args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(StockApplication.class, args);
+        System.out.println(applicationContext.getEnvironment().getProperty("test.name"));
     }
 }
