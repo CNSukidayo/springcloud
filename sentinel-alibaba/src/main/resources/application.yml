@@ -1,0 +1,11 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: sentinel-alibaba
+  cloud:
+    sentinel:
+      transport:
+        # 配置dashboard地址
+        dashboard: 192.168.149.130:8858
+      web-context-unify: false
