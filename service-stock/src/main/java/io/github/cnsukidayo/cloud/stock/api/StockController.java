@@ -21,4 +21,10 @@ public class StockController {
         return "扣减库存" + port;
     }
 
+    @GetMapping("reduceE")
+    public String reduceE() {
+        int a = 1 / 0;
+        return "扣减库存" + port;
+    }
+
 }

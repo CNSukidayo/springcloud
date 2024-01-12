@@ -15,6 +15,7 @@
         <module>order-openfeign</module>
         <module>sentinel-demo</module>
         <module>sentinel-alibaba</module>
+        <module>openfeign-sentinel</module>
     </modules>
 
     <properties>

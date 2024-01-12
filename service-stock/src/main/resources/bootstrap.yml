@@ -1,29 +1,29 @@
-spring:
-  application:
-    name: service-stock
-  cloud:
-    nacos:
-      # 配置nacos服务器地址
-      server-addr: 192.168.230.225:8848
-      # 必须配置账户和密码
-      username: nacos
-      password: nacos
-      config:
-        shared-configs:
-          - data-id: live-common
-            refresh: true
-            group: DEFAULT_GROUP
-          - data-id: live-data
-            refresh: true
-            group: DEFAULT_GROUP
-        # 不需要指定配置文件类型了
-        # file-extension: yaml
-        namespace: public
-        extension-configs[0]:
-          data-id: live-common
-          refresh: true
-          group: DEFAULT_GROUP
-        extension-configs[1]:
-          data-id: live-data
-          refresh: true
-          group: DEFAULT_GROUP
+#spring:
+#  application:
+#    name: service-stock
+#  cloud:
+#    nacos:
+#      # 配置nacos服务器地址
+#      server-addr: 192.168.230.225:8848
+#      # 必须配置账户和密码
+#      username: nacos
+#      password: nacos
+#      config:
+#        shared-configs:
+#          - data-id: live-common
+#            refresh: true
+#            group: DEFAULT_GROUP
+#          - data-id: live-data
+#            refresh: true
+#            group: DEFAULT_GROUP
+#        # 不需要指定配置文件类型了
+#        # file-extension: yaml
+#        namespace: public
+#        extension-configs[0]:
+#          data-id: live-common
+#          refresh: true
+#          group: DEFAULT_GROUP
+#        extension-configs[1]:
+#          data-id: live-data
+#          refresh: true
+#          group: DEFAULT_GROUP

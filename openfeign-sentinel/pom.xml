@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.github.cnsukidayo</groupId>
-    <artifactId>sentinel-alibaba</artifactId>
+    <artifactId>openfeign-sentinel</artifactId>
 
     <properties>
         <maven.compiler.source>9</maven.compiler.source>
@@ -23,17 +23,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--sentinel启动器-->
+
+        <!--服务注册发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--添加sentinel依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-extension</artifactId>
-        </dependency>
-
     </dependencies>
+
 
 </project>
