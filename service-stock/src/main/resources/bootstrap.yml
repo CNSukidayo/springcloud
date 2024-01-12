@@ -1,7 +1,6 @@
 spring:
   application:
-    # name必须设置为配置中心对应的Data Id的值
-    name: live-common
+    name: service-stock
   cloud:
     nacos:
       # 配置nacos服务器地址
@@ -10,5 +9,21 @@ spring:
       username: nacos
       password: nacos
       config:
-        # 设置分组
-        namespace: 978d31de-fefb-44f2-a682-3a9fd8c369d1
+        shared-configs:
+          - data-id: live-common
+            refresh: true
+            group: DEFAULT_GROUP
+          - data-id: live-data
+            refresh: true
+            group: DEFAULT_GROUP
+        # 不需要指定配置文件类型了
+        # file-extension: yaml
+        namespace: public
+        extension-configs[0]:
+          data-id: live-common
+          refresh: true
+          group: DEFAULT_GROUP
+        extension-configs[1]:
+          data-id: live-data
+          refresh: true
+          group: DEFAULT_GROUP

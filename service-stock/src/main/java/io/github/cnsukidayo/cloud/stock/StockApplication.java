@@ -2,6 +2,7 @@ package io.github.cnsukidayo.cloud.stock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @date 2024/1/9 16:35
  */
 @SpringBootApplication
+@RefreshScope
 public class StockApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(StockApplication.class, args);
