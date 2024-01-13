@@ -1,0 +1,48 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: seata-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.149.131:8870
+        username: nacos
+        password: nacos
+        namespace: public
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.149.131:7901/seata_order?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: io.github.cnsukidayo.order.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+seata:
+  registry:
+    # 表明seata服务注册在nacos中,因为seata可以注册在很多不同的注册中心
+    type: nacos
+    nacos:
+      # 配置nacos的地址(这里不要混淆,虽然上面已经配置过nacos的地址了,不代表这里不用配置;想想如果seata注册在zookpeer中呢?)
+      # 上面配置的nacos是当前服务要注册到的注册中心的地址
+      server-addr: 192.168.149.131:8870
+      # seata在nacos中注册的名称(可以在nacos控制面板->服务列表里看到)
+      application: seata-server
+      # group: SEATA_GROUP 配置seata的group
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.149.131:8870
+      username: nacos
+      password: nacos
+      group: DEFAULT_GROUP
+  tx-service-group: jiangsu
+  service:
+    vgroup-mapping:
+      jiangsu: default
