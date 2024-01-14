@@ -7,7 +7,7 @@ spring:
     sentinel:
       transport:
         # 配置dashboard地址
-        dashboard: 192.168.149.130:8858
+        dashboard: 192.168.230.128:8858
       web-context-unify: false
       # dataSource是一个Map集合,可以回顾一下yml中如何编写Map集合
       datasource:
@@ -16,7 +16,7 @@ spring:
           # 设置使用nacos配置中心,
           nacos:
             # 设置nacos的远程地址
-            server-addr: 192.168.149.130:8848
+            server-addr: 192.168.230.128:8870
             username: nacos
             password: nacos
             # 设置data-id 要和远程配置中心对应上

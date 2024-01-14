@@ -18,6 +18,7 @@
         <module>openfeign-sentinel</module>
         <module>seata-order</module>
         <module>seata-stock</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

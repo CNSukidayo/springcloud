@@ -1,0 +1,23 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.230.128:8870
+        username: naocs
+        password: nacos
+
+    gateway:
+      # 路由规则
+      routes:
+        - id: order-openfeign
+          uri: lb://order-openfeign
+          predicates:
+            - Path=/api/hello/**
+    # 配置sentinel-控制台
+    sentinel:
+      transport:
+        dashboard: 192.168.230.128:8858
